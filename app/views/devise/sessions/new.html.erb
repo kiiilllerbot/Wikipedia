@@ -1,0 +1,29 @@
+<div class="row justify-content-center" style="margin-top: 25vh">
+  <div class="col-md-6">
+    <div class="card" style="padding: 10px">
+      <div class="card-body">
+        <h2 class="text-center pb-2">Log in</h2>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        label:false,
+                        placeholder:'Email',
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        label:false,
+                        placeholder:'Password',
+                        required: true,
+                        input_html: { autocomplete: "current-password" } %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in",:class=>"btn btn-sm btn-primary ml-0" %>
+            <%= link_to "Sign up", new_user_registration_path,:class=>"btn btn-sm btn-info"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

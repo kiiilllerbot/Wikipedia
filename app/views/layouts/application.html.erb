@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsWikipedia</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag('icon.png') %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/css/mdb.min.css" rel="stylesheet">
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  </head>
+  <body>
+    <%= render 'shared/alert' %>
+    <%= render 'shared/navbar' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/js/mdb.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light #fafafa grey lighten-5 scrolling-navbar">
+    <div class="container">
+      <%= link_to root_path,:class=>"navbar-brand" do %>
+        <i class="fab fa-wikipedia-w"></i> Rails-Wikipedia
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "All Articles", root_path, :class=>"nav-link"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to "New Article", new_content_path, :class=>"nav-link"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Account", edit_user_registration_path, :class=>"nav-link"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log-out", destroy_user_session_path,method: :delete, :class=>"nav-link"%>
+            </li>
+          <% else %>
+            <li class="nav-item mr-1">
+              <div class="nav-link"><i class="fas fa-user-alt"></i> Not logged in</div>
+              
+            </li>
+            <li class="nav-item">
+              <%= link_to "Create account", new_user_registration_path, :class=>"nav-link"%>
+            </li>
+            
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, :class=>"nav-link"%>
+            </li>
+            
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
